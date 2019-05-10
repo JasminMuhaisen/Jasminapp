@@ -36,22 +36,18 @@ public class PicFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pic, container, false);
-
-        return view;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setContentView(R.layout.fragment_pic);
-        b=(Button) view.findViewById(R.id.btnSelectPhoto);
-        viewImage=(ImageView) view.findViewById(R.id.viewImage);
+        b=(Button) getActivity().findViewById(R.id.btnSelectPhoto);
+        viewImage=(ImageView) getActivity().findViewById(R.id.viewImage);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectImage();
             }
         });
+
+        return view;
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
